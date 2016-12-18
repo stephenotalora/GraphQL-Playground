@@ -1,0 +1,13 @@
+{
+  "name": "ex-1",
+  "version": "0.0.1",
+  "description": "GraphQL example",
+  "main": "index.js",
+  "author": "Jonathan S. Otalora",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-graphql": "^0.6.1",
+    "graphql": "^0.8.2"
+  }
+}
