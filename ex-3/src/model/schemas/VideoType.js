@@ -1,10 +1,11 @@
 const {
+	GraphQLBoolean,
 	GraphQLID,
 	GraphQLInt,
+	GraphQLNonNull,
 	GraphQLObjectType,
 	GraphQLSchema,
-	GraphQLString,
-	GraphQLBoolean
+	GraphQLString
 } = require('graphql');
 
 module.exports = new GraphQLObjectType({
@@ -12,7 +13,7 @@ module.exports = new GraphQLObjectType({
 	description: 'A video for an app',
 	fields: {
 		id: {
-			type: GraphQLID,
+			type: new GraphQLNonNull(GraphQLID),
 			description: 'The id of a video'
 		},
 		title: {
