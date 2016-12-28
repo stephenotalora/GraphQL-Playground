@@ -20,3 +20,13 @@ exports.getVideoById = (id) => {
 exports.getAllVideos = () => {
 	return Promise.resolve(VIDEO_MOCK);
 };
+
+exports.createVideo = ({duration, title, watched}) => {
+	const newVideo = {
+		id: (new Buffer(title, 'utf8')).toString('base64'),
+		duration, title, watched
+	};
+
+	VIDEO_MOCK.push(newVideo);
+	return newVideo;
+};

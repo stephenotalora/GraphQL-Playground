@@ -1,10 +1,10 @@
 const Promise = require('bluebird');
 const graphqlHTTP = require('express-graphql');
 const server = require('express')();
-const VideoQuery = require('./src/model/queries/VideoQuery');
+const root = require('./src/model/root');
 
 server.use('/graphql', graphqlHTTP({
-	schema: VideoQuery,
+	schema: root,
 	graphiql: true
 }));
 

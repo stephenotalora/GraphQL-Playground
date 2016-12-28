@@ -15,13 +15,13 @@ const VideoArgs = {
 	}
 };
 
-const queryType = new GraphQLObjectType({
-	name: 'QueryType',
-	description: 'The root query type',
+module.exports = new GraphQLObjectType({
+	name: 'VideoQuery',
+	description: 'The root video query type',
 	fields: {
 		video: {
 			type: VideoType,
-			args: VideoArgs
+			args: VideoArgs,
 			resolve: (_, {id}) => getVideoById(id)
 		},
 		videos: {
@@ -29,8 +29,4 @@ const queryType = new GraphQLObjectType({
 			resolve: getAllVideos
 		}
 	}
-});
-
-module.exports = new GraphQLSchema({
-	query: queryType
 });
